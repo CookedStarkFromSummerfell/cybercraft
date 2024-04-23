@@ -20,10 +20,16 @@ public class CyberConfig {
 
     public static class Server {
         public final ModConfigSpec.BooleanValue spawnCyberZombies;
+        public final ModConfigSpec.BooleanValue legacySurgeryChamber;
 
         public Server(ModConfigSpec.Builder builder) {
             builder.push("General");
-            spawnCyberZombies = builder.define("Spawn Cyber Zombies", true);
+            this.spawnCyberZombies = builder
+                    .translation("config.cybercraft.server.general.spawn_cyber_zombies")
+                    .define("Spawn Cyber Zombies", true);
+            this.legacySurgeryChamber = builder
+                    .translation("config.cybercraft.server.general.legacy_surgery_chamber")
+                    .define("Legacy Surgery Chamber", false);
             builder.pop();
         }
     }

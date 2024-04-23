@@ -20,7 +20,7 @@ public class Cybercraft {
         CyberBlocks.init(bus);
         CyberItems.init(bus);
 
-        //bus.register(new CyberEvents());
+        bus.register(CyberEvents.class);
         bus.addListener(CyberRegistries::newDataPackRegistries);
         bus.addListener(CyberDataGenerators::gatherData);
 
